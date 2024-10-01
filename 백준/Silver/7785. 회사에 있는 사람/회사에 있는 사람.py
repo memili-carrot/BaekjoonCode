@@ -1,16 +1,13 @@
-from collections import deque
 import sys
 
-n = int(input())
-log = {}
+n = int(sys.stdin.readline().strip())
+p = set()
 
-for _ in range(n):
-    name, status = input().split()
-    if status == "enter":
-        log[name] = True
-    elif status == "leave":
-        if name in log:
-            del log[name]
+for i in range(n):
+    a, b = sys.stdin.readline().split()
+    if b == 'enter':
+        p.add(a)
+    elif b == 'leave':
+        p.discard(a)
 
-for name in sorted(log.keys(), reverse=True):
-    print(name)
+print("\n".join(sorted(p, reverse=True)))
