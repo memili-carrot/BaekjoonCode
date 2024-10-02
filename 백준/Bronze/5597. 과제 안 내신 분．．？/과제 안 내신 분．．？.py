@@ -1,10 +1,11 @@
-submit_students = set()
-for _ in range(28):
-    submit_students.add(int(input().strip()))
+import sys
 
-allstudents = set(range(1, 31))
-not_students = allstudents - submit_students
+def main():
+    data = set(map(int, sys.stdin.read().split()))
 
-not_students = sorted(not_students)
-print(not_students[0])
-print(not_students[1])
+    for i in range(1, 31):
+        if i not in data:
+            print(i)
+
+if __name__ == "__main__":
+    main()
