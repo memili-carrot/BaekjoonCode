@@ -1,17 +1,15 @@
-def find_last_computer(a, b):
-    a %= 10
-    if a == 0:
-        return 10
-    cycle = []
-    value = a
-    while value not in cycle:
-        cycle.append(value)
-        value = (value * a) % 10
+import sys
+input = sys.stdin.readline
 
-    cycle_length = len(cycle)
-    index = (b - 1) % cycle_length
-    return cycle[index]
-T = int(input())
-for _ in range(T):
+t = int(input())
+
+arr = [[10], [1], [2,4,8,6], [3,9,7,1], [4,6], [5], [6], [7,9,3,1], [8,4,2,6], [9,1], [10]]
+def sol():
     a, b = map(int, input().split())
-    print(find_last_computer(a, b))
+    a %= 10
+    c = b%len(arr[a]) - 1
+    print(arr[a][c])
+
+
+for tc in range(t):
+    sol()
