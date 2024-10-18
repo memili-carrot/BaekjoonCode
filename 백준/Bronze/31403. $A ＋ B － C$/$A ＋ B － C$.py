@@ -1,9 +1,6 @@
-A = int(input())
-B = int(input())
-C = int(input())
+a=input()
+b=input()
+c=int(input())
 
-int_result = A + B - C
-str_result = int(str(A) + str(B)) - C
-
-print(int_result)
-print(str_result)
+print(int(a)+int(b)-c)
+print(int(a+b)-c)
