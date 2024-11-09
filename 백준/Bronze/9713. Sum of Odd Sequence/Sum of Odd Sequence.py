@@ -1,3 +1,9 @@
-for _ in range(int(input())):
+T = int(input())
+results = []
+
+for _ in range(T):
     N = int(input())
-    print(((N + 1) // 2) ** 2)
+    results.append(((N + 1) // 2) ** 2)
+
+for result in results:
+    print(result)
